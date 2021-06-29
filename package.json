@@ -1,0 +1,44 @@
+{
+  "name": "agent-vila",
+  "version": "1.0.4",
+  "description": "This package is for getting latest agents via google analytics and randomize it",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pardeep889/agent-vila.git"
+  },
+  "keywords": [
+    "user-agent",
+    "user",
+    "agent",
+    "agent",
+    "nodejs",
+    "nodejs",
+    "agent",
+    "google",
+    "ga",
+    "google",
+    "analytics",
+    "agents",
+    "ga",
+    "user",
+    "agents",
+    "ga",
+    "agents",
+    "agents",
+    "user-agents",
+    "user-agent"
+  ],
+  "author": "pardeep889",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pardeep889/agent-vila/issues"
+  },
+  "homepage": "https://github.com/pardeep889/agent-vila#readme",
+  "dependencies": {
+    "ga-api": "0.0.5"
+  }
+}
