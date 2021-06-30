@@ -4,7 +4,7 @@
   "description": "This package is for getting latest agents and randomize it",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "repository": {
     "type": "git",
