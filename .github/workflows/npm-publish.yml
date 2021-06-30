@@ -6,6 +6,9 @@ name: Node.js Package Update
 on:
   schedule:
     - cron: '0 0 * * 0'
+  push:
+    branches:
+      - master
 
 jobs:
   create-envfile:
@@ -42,7 +45,7 @@ jobs:
           node-version: 14
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: node update-user-agents.js
+      - run: node src/update-user-agents.js
       - run: git config --global user.email "sorin.marica@jeco.dev"
       - run: git config --global user.name "Weekly Update"
       - run: npm --no-git-tag-version version patch

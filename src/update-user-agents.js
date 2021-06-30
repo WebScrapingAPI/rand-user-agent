@@ -47,7 +47,7 @@ pool.query(query, (err, res) => {
             }
         }
 
-        fs.writeFileSync(path.join(__dirname, 'user-agents.json'), JSON.stringify(content));
+        fs.writeFileSync(path.join(__dirname, '../data/user-agents.json'), JSON.stringify(content));
     } else {
         console.log(err);
     }

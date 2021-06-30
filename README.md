@@ -1,6 +1,6 @@
 # rand-user-agent package
 
-rand-user-agent is a nodejs package that provides random generation of a real user agent string, based on the frequency the user agents occur.
+rand-user-agent is a nodejs package that provides random generation of a real user-agent string, based on the frequency the user-agents occur.
 
 ## Installation
 
@@ -37,7 +37,7 @@ This data is saved in a json under the following format:
 }
 ```
 
-Because sometimes one userAgent might occur so many times that it will end up being returned most of the times in the result, we need to normalize the frequency values to prevent that. To do so, we sort an array with all the unique values of the frequency, and replace the frequency for each user agent with the position where the frequency is in the sorted array. We are doing this using the JSONfrequencyNormalize function from helpers.js
+Because sometimes one user-agent might occur so many times that it will end up being returned most of the times in the result, we need to normalize the frequency values to prevent that. To do so, we sort an array with all the unique values of the frequency, and replace the frequency for each user-agent with the position where the frequency is in the sorted array. We are doing this using the JSONfrequencyNormalize function from helpers.js
 
 To make things easier for us, when somebody uses the package we are first transforming the processed json into a indexes json, such as the one below:
 
@@ -58,16 +58,4 @@ To make things easier for us, when somebody uses the package we are first transf
 }
 ```
 
-Using the data in this format allows us to easily retrieve a random userAgent, while also taking into account how often it occured in our data.
-
-## .env file
-
-This package uses .env file. If you want to update the data in user-agents.json from your own database, you should set your database connection in a .env file this way:
-
-```
-DB_HOST=database host
-DB_USER=database user
-DB_PASS=database pass
-DB_NAME=database name
-DB_PORT=database port
-```
+Using the data in this format allows us to easily retrieve a random user-agent, while also taking into account how often it occured in our data.
