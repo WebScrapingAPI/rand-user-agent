@@ -14,3 +14,5 @@ module.exports = function(device) {
     }
     return helpers.randomElement(content[device]);
 };
+
+// test2
