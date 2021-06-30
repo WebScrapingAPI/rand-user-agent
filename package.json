@@ -1,44 +1,34 @@
 {
-  "name": "agent-vila",
-  "version": "1.0.4",
-  "description": "This package is for getting latest agents via google analytics and randomize it",
+  "name": "rand-user-agent",
+  "version": "1.0.1",
+  "description": "This package is for getting latest agents and randomize it",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pardeep889/agent-vila.git"
+    "url": "git+https://github.com/WebScrapingAPI/rand-user-agent.git"
   },
   "keywords": [
     "user-agent",
     "user",
     "agent",
-    "agent",
     "nodejs",
-    "nodejs",
-    "agent",
-    "google",
-    "ga",
-    "google",
-    "analytics",
-    "agents",
-    "ga",
-    "user",
-    "agents",
-    "ga",
-    "agents",
     "agents",
     "user-agents",
-    "user-agent"
+    "random",
+    "random-user-agent"
   ],
-  "author": "pardeep889",
+  "author": "WebScrapingAPI",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pardeep889/agent-vila/issues"
+    "url": "https://github.com/WebScrapingAPI/rand-user-agent/issues"
   },
-  "homepage": "https://github.com/pardeep889/agent-vila#readme",
+  "homepage": "https://github.com/WebScrapingAPI/rand-user-agent#readme",
   "dependencies": {
-    "ga-api": "0.0.5"
+    "device-detector-js": "^2.2.10",
+    "dotenv": "^10.0.0",
+    "pg": "7.4.3"
   }
 }
