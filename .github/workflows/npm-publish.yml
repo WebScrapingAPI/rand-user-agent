@@ -11,21 +11,7 @@ on:
       - master
 
 jobs:
-  create-envfile:
-    runs-on: ubuntu-latest 
-    steps:
-    - name: Make envfile
-      uses: SpicyPizza/create-envfile@v1
-      with:
-        envkey_DB_HOST: ${{secrets.db_host}}
-        envkey_DB_USER: ${{secrets.db_user}}
-        envkey_DB_PASS: ${{secrets.db_pass}}
-        envkey_DB_NAME: ${{secrets.db_name}}
-        envkey_DB_PORT: ${{secrets.db_port}}
-        file_name: .env
-
   build:
-    needs: create-envfile
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -40,6 +26,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_DB_HOST: ${{secrets.db_host}}
+          envkey_DB_USER: ${{secrets.db_user}}
+          envkey_DB_PASS: ${{secrets.db_pass}}
+          envkey_DB_NAME: ${{secrets.db_name}}
+          envkey_DB_PORT: ${{secrets.db_port}}
+          file_name: .env
       - uses: actions/setup-node@v2
         with:
           node-version: 14
