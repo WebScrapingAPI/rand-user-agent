@@ -4,8 +4,11 @@
 name: Node.js Package Update
 
 on:
-  release:
-    types: [created]
+  schedule:
+    - cron: '0 0 * * 0'
+  pull_request:
+    branches:
+      - master
 
 jobs:
   create-envfile:
@@ -42,27 +45,11 @@ jobs:
           node-version: 14
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: nodejs update-user-agents.js
-      - run: npm version patch
+      - run: node update-user-agents.js
+      - run: git config --global user.email "sorin.marica@jeco.dev"
+      - run: git config --global user.name "Weekly Update"
+      - run: npm version patch -m "New Version %s - user-agents.json updated"
+      - run: git push
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: nodejs update-user-agents.js
-      - run: npm version patch
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
