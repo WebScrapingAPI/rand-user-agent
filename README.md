@@ -2,6 +2,24 @@
 
 rand-user-agent is a nodejs package that provides random generation of a real user agent string, based on the frequency the user agents occur.
 
+## Installation
+
+Run the following command in the main folder of your project:
+
+```
+npm i rand-user-agent
+```
+
+## Usage Example 
+
+```
+const randUserAgent = require('rand-user-agent');
+const agent = randUserAgent("desktop");
+
+console.log(agent);
+
+```
+
 ## How does it work
 
 Using our own database with data about guests and their user-agent, we update a file called "user-agents.json" on a weekly basis with new information. 
@@ -41,16 +59,6 @@ To make things easier for us, when somebody uses the package we are first transf
 ```
 
 Using the data in this format allows us to easily retrieve a random userAgent, while also taking into account how often it occured in our data.
-
-## Usage Example 
-
-```
-const randUserAgent = require('./index');
-const agent = randUserAgent("desktop");
-
-console.log(agent);
-
-```
 
 ## .env file
 
