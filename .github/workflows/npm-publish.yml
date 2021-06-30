@@ -44,11 +44,13 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
+      - run: git pull
       - run: npm ci
       - run: node src/update-user-agents.js
       - run: git config --global user.email "sorin.marica@jeco.dev"
       - run: git config --global user.name "Weekly Update"
-      - run: npm --no-git-tag-version version patch
+      - run: npm version patch -m "Updated user-agents. New package version is %s"
+      - run: git push
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
