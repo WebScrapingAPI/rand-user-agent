@@ -2,6 +2,8 @@
 
 rand-user-agent is a nodejs package that provides random generation of a real user-agent string, based on the frequency the user-agents occur.
 
+This package was originally created as a functionality for [WebScrapingAPI](https://www.webscrapingapi.com/), but it can be integrated into any node.js scraping project. If you need a dependable and feature-rich web scraper, [give the WebScrapingAPI free trial a go](https://www.webscrapingapi.com/pricing/)!
+
 ## Installation
 
 Run the following command in the main folder of your project:
