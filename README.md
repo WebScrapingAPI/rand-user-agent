@@ -1,4 +1,4 @@
-# rand-user-agent package
+# Random User Agent
 
 rand-user-agent is a nodejs package that provides random generation of a real user-agent string, based on the frequency the user-agents occur.
 
