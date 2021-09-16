@@ -29,6 +29,6 @@
   "dependencies": {
     "device-detector-js": "^2.2.10",
     "dotenv": "^10.0.0",
-    "pg": "7.4.3"
+    "pg": "^8.7.1"
   }
 }
