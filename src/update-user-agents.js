@@ -22,7 +22,7 @@ const pool = new Pool({
 let query = "SELECT context_user_agent, COUNT(context_user_agent) AS frequency FROM prod.pages  WHERE original_timestamp > date_trunc('day', NOW() - interval '3 months') GROUP BY context_user_agent";
 
 pool.query(query, (err, res) => {
-    if (err !== 'undefined') {
+    if (typeof err === 'undefined' && typeof res !== 'undefined') {
         let content = {};
 
         for (let index = 0; index < res.rows.length; index++) {
