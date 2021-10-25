@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -23,7 +23,7 @@ jobs:
 
   publish-npm:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
       - uses: SpicyPizza/create-envfile@v1
@@ -44,7 +44,7 @@ jobs:
       - run: npm ci
       - run: node src/update-user-agents.js
       - run: git add --all
-      - run: npm version patch -m "Updated user-agents. New package version is %s"
+      - run: npm version patch -m "Updated user-agents. New package version is %s" -f
       - run: git push
       - run: npm publish
         env:
