@@ -3,6 +3,7 @@ const helpers = require('./helpers');
 const fs = require('fs');
 const path = require("path");
 const DeviceDetector = require("device-detector-js");
+var parser = require('ua-parser-js');
 
 const deviceDetector = new DeviceDetector();
 
@@ -38,6 +39,11 @@ pool.query(query, (err, res) => {
             if (deviceType == 'smartphone') {
                 deviceType = 'mobile';
             }
+
+            var ua = parser(res.rows[index].context_user_agent);
+
+            deviceType += (ua.browser.name ? ua.browser.name.toLowerCase() : '') 
+            deviceType += (ua.os.name ? ua.os.name.toLowerCase() : '')
 
             if (!content.hasOwnProperty(deviceType)) {
                 content[deviceType] = {};
