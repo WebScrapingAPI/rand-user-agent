@@ -26,7 +26,7 @@
     "url": "https://github.com/WebScrapingAPI/rand-user-agent/issues"
   },
   "homepage": "https://github.com/WebScrapingAPI/rand-user-agent#readme",
-  "dependencies": {
+  "devDependencies": {
     "device-detector-js": "^2.2.10",
     "dotenv": "^10.0.0",
     "pg": "^8.7.1",
