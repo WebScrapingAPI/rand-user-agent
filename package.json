@@ -1,6 +1,6 @@
 {
   "name": "rand-user-agent",
-  "version": "1.0.94",
+  "version": "1.0.95",
   "description": "This package is for getting latest agents and randomize it",
   "main": "src/index.js",
   "scripts": {
