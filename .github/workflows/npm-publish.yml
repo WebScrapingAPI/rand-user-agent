@@ -28,11 +28,16 @@ jobs:
       - uses: actions/checkout@v2
       - uses: SpicyPizza/create-envfile@v1
         with:
-          envkey_DB_HOST: ${{secrets.db_host}}
-          envkey_DB_USER: ${{secrets.db_user}}
-          envkey_DB_PASS: ${{secrets.db_pass}}
-          envkey_DB_NAME: ${{secrets.db_name}}
-          envkey_DB_PORT: ${{secrets.db_port}}
+          envkey_PG_DB_HOST: ${{secrets.pg_db_host}}
+          envkey_PG_DB_USER: ${{secrets.pg_db_user}}
+          envkey_PG_DB_PASS: ${{secrets.pg_db_pass}}
+          envkey_PG_DB_NAME: ${{secrets.pg_db_name}}
+          envkey_PG_DB_PORT: ${{secrets.pg_db_port}}
+          envkey_MYSQL_DB_HOST: ${{secrets.mysql_db_host}}
+          envkey_MYSQL_DB_USER: ${{secrets.msql_db_user}}
+          envkey_MYSQL_DB_PASS: ${{secrets.mysql_db_pass}}
+          envkey_MYSQL_DB_NAME: ${{secrets.mysql_db_name}}
+          envkey_MYSQL_DB_PORT: ${{secrets.mysql_db_port}}
           file_name: .env
       - uses: actions/setup-node@v2
         with:
