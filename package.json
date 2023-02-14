@@ -29,10 +29,8 @@
   "devDependencies": {
     "device-detector-js": "^2.2.10",
     "dotenv": "^10.0.0",
+    "mysql2": "^3.1.2",
     "pg": "^8.7.1",
     "ua-parser-js": "^1.0.2"
-  },
-  "dependencies": {
-    "mysql2": "^3.1.2"
   }
 }
