@@ -20,6 +20,7 @@ jobs:
           node-version: 14
       - run: npm ci
       - run: npm test
+      - run: npm run build
 
   publish-npm:
     needs: build
@@ -47,7 +48,8 @@ jobs:
       - run: git config --global user.name "Weekly Update"
       - run: git pull
       - run: npm ci
-      - run: node src/update-user-agents.js
+      - run: npm run build
+      - run: node dist/update-user-agents.js
       - run: git add --all
       - run: npm version patch -m "Updated user-agents. New package version is %s" -f
       - run: git push
