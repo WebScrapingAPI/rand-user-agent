@@ -44,7 +44,7 @@ function parseRow(row) {
     if (deviceType == "smartphone") {
         deviceType = "mobile";
     }
-    var ua = parser(row.context_user_agent);
+    const ua = parser(row.context_user_agent);
     deviceType += ua.browser.name ? ua.browser.name.toLowerCase() : "";
     deviceType += ua.os.name ? ua.os.name.toLowerCase() : "";
     if (!content.hasOwnProperty(deviceType)) {

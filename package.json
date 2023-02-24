@@ -1,15 +1,15 @@
 {
   "name": "rand-user-agent",
-  "version": "1.0.108",
+  "version": "2.0.0",
   "description": "This package is for getting latest agents and randomize it",
-  "main": "dist/index.js",
-  "types": "dist",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "",
-    "build": "rm -rf ./dist/ && tsc"
+    "build": "shx rm -rf ./dist/* && tsc"
   },
   "engines": {
-    "node": ">=14.16"
+    "node": ">=16.16"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,10 @@
   "bugs": {
     "url": "https://github.com/WebScrapingAPI/rand-user-agent/issues"
   },
+  "files": [
+    "dist",
+    "data"
+  ],
   "homepage": "https://github.com/WebScrapingAPI/rand-user-agent#readme",
   "devDependencies": {
     "@types/node": "^18.14.1",
@@ -40,6 +44,8 @@
     "mysql2": "^3.1.2",
     "pg": "^8.7.1",
     "typescript": "^4.9.5",
-    "ua-parser-js": "^1.0.2"
+    "ua-parser-js": "^1.0.2",
+    "shx": "^0.3.4"
   }
+
 }

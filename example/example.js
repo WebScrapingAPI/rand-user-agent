@@ -1,4 +1,4 @@
-import randUserAgent from "../dist/index.js"
+import randUserAgent from "rand-user-agent";
 const agent = randUserAgent("desktop");
 
 console.log(agent);
