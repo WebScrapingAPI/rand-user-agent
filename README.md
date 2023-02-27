@@ -11,11 +11,12 @@ Run the following command in the main folder of your project:
 ```
 npm i rand-user-agent
 ```
-
+| :memo:        | Starting from version 2.0.0 onwards, this package is migrating to ESM.|
+|---------------|:------------------------|
 ## Usage Example 
 
 ```
-const randUserAgent = require('rand-user-agent');
+import randUserAgent from "rand-user-agent";
 const agent = randUserAgent("desktop");
 
 console.log(agent);
@@ -25,7 +26,7 @@ console.log(agent);
 You can also provide a browser and an operating system in the parameters of randUserAgent in order to filter out the user agents:
 
 ```
-const randUserAgent = require('rand-user-agent');
+import randUserAgent from "rand-user-agent";
 const agent = randUserAgent("desktop", "chrome", "linux");
 
 console.log(agent);
