@@ -1,4 +1,4 @@
-const randUserAgent = require('../src/index');
+import randUserAgent from "rand-user-agent";
 const agent = randUserAgent("desktop");
 
 console.log(agent);

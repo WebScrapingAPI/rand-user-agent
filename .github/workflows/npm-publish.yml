@@ -11,19 +11,12 @@ on:
       - master
 
 jobs:
-  build:
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14
-      - run: npm ci
-      - run: npm test
 
   publish-npm:
-    needs: build
     runs-on: self-hosted
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
     steps:
       - uses: actions/checkout@v2
       - uses: SpicyPizza/create-envfile@v1
@@ -40,13 +33,15 @@ jobs:
           file_name: .env
       - uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org/
+
       - run: git config --global user.email "sorin.marica@jeco.dev"
       - run: git config --global user.name "Weekly Update"
       - run: git pull
       - run: npm ci
-      - run: node src/update-user-agents.js
+      - run: npm run build
+      - run: node dist/update-user-agents.js
       - run: git add --all
       - run: npm version patch -m "Updated user-agents. New package version is %s" -f
       - run: git push
