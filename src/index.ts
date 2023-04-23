@@ -3,7 +3,7 @@ import {
     JSONIsFrequency,
     JSONinterval,
     randomElement,
-  } from "./helpers.js";
+  } from "./helpers";
   
   import * as fs from 'fs';
   import * as path from 'path';
